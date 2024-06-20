@@ -1,23 +1,25 @@
-Fichier README
+Fractal Set Image Generator
 ===================
 
 Introduction
 ------------
 
-L'objectif de cette librairie est de créer un générateur d'image des ensembles fractal de Mandelbrot et de Julia. Ce premier ensemble se définit comme l'ensemble des complexes c tels que la suite $ z_{n+1} = z_{n}^{2} + c $ est bornée, avec $ z_{0} = 0 $. Le second se définit avec la même suite mais $ z_{0} $ est différent de 0. Ainsi, l’ensemble de Julia pour un c complexe fixé est constitué de l’ensemble des $z_{0}$ complexes pour lesquels $ z_{n+1} = z_{n}^{2}+c $ converge.
+The objective of this library is to create an image generator for the Mandelbrot and Julia fractal sets. The Mandelbrot set is defined as the set of complex numbers $c$ for which the sequence $ z_{n+1} = z_{n}^{2} + c $ is bounded, with $ z_{0} = 0 $. The Julia set, on the other hand, uses the same sequence but with $ z_{0}≠0 $. Thus, the Julia set for a fixed complex $c$ consists of all complex $z_{0}$ for which $ z_{n+1} = z_{n}^{2}+c $ converges.
 
-Fonctionnement 
+Usage
 ------------
 
-Pour visualiser des images de fractales, il faut faire appel à plot_mandelbrot et plot_julia en spécifiant la zone du plan complexe qui nous intéresse, la valeur de z0 pour julia, de c, la précision souhaitée (via le nombre max d'itérations), la taille de pixels souhaitée et le nom de l'image à enregistrer. 
-Ces deux fonctions determinent grâce à is_in_julia ou is_in_mandelbrot si les points considérés, dans la zone du plan complexe choisie, appartiennent aux ensembles ou non.
-Pour chaque point, on calcule les max_iter premiers termes de la suite et on verifie que tous les termes sont dans le cercle de rayon 2 du plan complexe. Si oui, le point est noir, sinon il est blanc. 
-Pour generer les suites de julia et de mandelbrot, on a crée les générateurs suite_mandelbrot et suite_julia
+To visualize fractal images, you need to call plot_mandelbrot and plot_julia, specifying the region of the complex plane of interest, the value of $z0$ for Julia, the value of $c$, the desired precision (via the max number of iterations), the desired pixel size, and the name of the image to save.
 
-Aide
+These two functions determine, using `is_in_julia` or `is_in_mandelbrot`, whether the points in the chosen complex plane region belong to the sets or not. For each point, we calculate the first max_iter terms of the sequence and check if all terms are within the circle of radius 2 in the complex plane. If they are, the point is black; otherwise, it is white.
+
+To generate the Julia and Mandelbrot sequences, I have created the generators `suite_mandelbrot` and `suite_julia`.
+
+Help
 ------------
 
-- Le projet a été créé sous python 3.11.
-- Les librairies utilisées sont numpy et matplolib
-- Pour modifier le chemin de sauvegarde des images, il faut modifier l'argument du plt.savefig à la dernière ligne des fonctions plot_mandelbrot (ligne 158) et plot_julia (ligne 201)
-- Les fonctions plot_lucia et plot_mandelbrot sont dans : mon_module/tp_final.py
+-The project was created using Python 3.11.
+-The libraries used are numpy and matplotlib.
+-To modify the image save path, change the argument in plt.savefig on the last line of the functions plot_mandelbrot (line 158) and plot_julia (line 201).
+-The functions plot_julia and plot_mandelbrot are located in: mon_module/tp_final.py
+
