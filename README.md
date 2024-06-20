@@ -19,7 +19,9 @@ Help
 ------------
 
 -The project was created using Python 3.11.
--The libraries used are numpy and matplotlib.
--To modify the image save path, change the argument in plt.savefig on the last line of the functions plot_mandelbrot (line 158) and plot_julia (line 201).
--The functions plot_julia and plot_mandelbrot are located in: mon_module/tp_final.py
 
+-The libraries used are numpy and matplotlib.
+    
+-To modify the image save path, change the argument in plt.savefig on the last line of the functions plot_mandelbrot (line 158) and plot_julia (line 201).
+
+-The functions plot_julia and plot_mandelbrot are located in: mon_module/tp_final.py
